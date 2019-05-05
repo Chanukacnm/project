@@ -1,0 +1,229 @@
+SharingIsKaring
+Jabir Chowdhury
+Shafali Gupta (PM)
+Karen Li
+pd 7
+---------------------
+Book/Movie Recommendations
+______   ______   __   __   __       ______   _______
+/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\
+\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__
+\:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\
+ \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/
+  \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \
+   \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/
+==============================================================
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+karenL -- 2018-11-20 13:00
+--------------------------------------------------------------
+1. Decided to use OMDb, Open Library, and Google Books API to
+create a site that allows users to store information about books
+they have read and want to read and  movies they have watched and
+want to watch. In addition, the site will provide individual
+book and movie information as well as generate a book or movie
+recommendation based on user input.
+==============================================================
+
+team -- 2018-11-21 13:20
+--------------------------------------------------------------
+1. Clarify APIs to be used.
+2. Specify CSS type (Bootstrap).
+3. Clarify component map and site map.
+==============================================================
+
+karenL -- 2018-11-23 15:57
+--------------------------------------------------------------
+1. Created primitive templates (base, index, login, signup,
+movie_info, book_info) with basic CSS.
+2. Created basic app routes (index, login, signup, book, movie)
+that render their respective templates.
+3. Generated OMDb API key to use.
+==============================================================
+
+shafaliG -- 2018-11-26 13:10
+--------------------------------------------------------------
+1. Updated README to include roster and explanation of project.
+2. Included what APIs we are using for the project in design doc.
+3. Fixed the component map.
+==============================================================
+
+jabirC -- 2018-11-26 22:10
+--------------------------------------------------------------
+1. Updated database schema by removing confusing lines.
+==============================================================
+
+jabirC -- 2018-11-26 23:29
+--------------------------------------------------------------
+1. Added login and signup functionality with flash messages
+when there are errors.
+2. Created database as well as a makedatabase script to allow
+for database deletion and recreation.
+3. Added a script to utils for facilitating communication with
+the database.
+4. Added navbar with login/signup buttons to facilitate website
+traversal.
+==============================================================
+
+karenL -- 2018-11-27 13:20
+--------------------------------------------------------------
+1. Fixed login alert.
+==============================================================
+shafaliG -- 2018-11-27 13:20
+--------------------------------------------------------------
+1. Asked for permission to use passlib.
+2. Fixed design doc.
+==============================================================
+karenL -- 2018-11-28 13:15
+--------------------------------------------------------------
+1. Added dummy movie data for /movie_info route.
+2. Updated movie_info template.
+==============================================================
+shafaliG -- 2018-11-28 13:20
+--------------------------------------------------------------
+1. Updated component map
+2. started working on retrieval from open library
+==============================================================
+
+karenL -- 2018-11-28 23:31
+--------------------------------------------------------------
+1. Added movie_search route that displays search results for
+a movie.
+2. Added a .gitignore in data so databases will not be pushed.
+3. Movie info route displays movie information based on the
+imdbID.
+==============================================================
+
+JabirC -- 2018-11-29 03:16
+--------------------------------------------------------------
+1. Added Googlebooks Api.
+2. Updated book_search.html to show various information about
+searched books.
+3. Updated search bar in the navigation bar to support searching
+for both books and movies.
+4. Fixed bug where navbar showed user as being logged out
+while still logged in.
+5. Added dummy buttons in book_search.html for future use of
+adding books to wishlist or read list.
+==============================================================
+
+karenL -- 2018-11-28 13:20
+--------------------------------------------------------------
+1. Used imdb of movies from search to create a more informative
+list of dictionaries for movie search page.
+2. Movie search result displays simple movie information (poster,
+title, summary).
+==============================================================
+
+karenL -- 2018-11-28 22:12
+--------------------------------------------------------------
+1. Added dummy buttons in movie_search for future use of adding
+movies to watch list or watched list.
+2. Movie poster and title in search result links to individual
+movie_info page.
+==============================================================
+
+karenL -- 2018-11-29 13:19
+--------------------------------------------------------------
+1. Added rating and fixed poster sizing of movie search.
+2. Started templates for user's movie lists.
+3. Created requirements.txt.
+4. Updated README.md.
+==============================================================
+
+jabirC & karenL -- 2018-12-03 13:21
+--------------------------------------------------------------
+1. Generated API key for tastedive API for movie and book
+recommendations.
+2. Experimented with tastedive and use of headers.
+==============================================================
+
+karenL -- 2018-12-04 00:22
+--------------------------------------------------------------
+1. Got tastedive to work with headers.
+2. Generated a dictionary of recommended movies using
+recommended movies from tastedive and OMDb information.
+2. Added recommendations section to movie info page (and then
+the API broke).
+==============================================================
+
+karenL -- 2018-12-04 09:18
+--------------------------------------------------------------
+1. Made recommendations section of movie info page more
+informative.
+2. Movie search no longer breaks if movie is not in API data.
+3. Identified bug where code breaks if you enter search
+parameters such as %.
+==============================================================
+shafaliG -- 2018-12-04 13:10
+--------------------------------------------------------------
+1. Worked on README to fulfill requirements
+2. Bug testing on website
+==============================================================
+
+jabirC -- 2018-12-04 03:40
+--------------------------------------------------------------
+1. Added content to book_info.html
+2. Implemented a filter for book_search so that books with
+little to no data don't show
+3. Added the login/logout features to book_info and movie_info
+==============================================================
+
+jabirC -- 2018-12-05 04:1500:05
+--------------------------------------------------------------
+1. Added book recommendations to book info pages
+2. Added several try-except statements for http url request
+errors.
+3. Added many functions in util/dbcommands to facilitate interaction
+with database
+4. Added functionality to buttons
+5. Implemented button pressing restrictions
+==============================================================
+shafaliG -- 2018-12-05 13:10
+--------------------------------------------------------------
+1. Sent API keys file
+2. Worked on README
+3. QUAF post
+==============================================================
+
+jabirC -- 2018-12-06 02:39
+--------------------------------------------------------------
+1. Added profile page so users can view their lists
+2. Found an error where google books returns 403 when the
+request limit is exceeded
+==============================================================
+
+karenL -- 2018-12-06 10:43
+--------------------------------------------------------------
+1. Made movie rec function more flexible.
+2. Home page displays recommended movies based on what the
+user has already watched. Number of movies displayed needs to
+be limited and CSS can be improved.
+==============================================================
+shafaliG -- 2018-12-06 13:10
+--------------------------------------------------------------
+1. Updated README. Includes directions and dependencies
+2. Bug testing
+==============================================================
+
+karenL -- 2018-12-07 04:39
+--------------------------------------------------------------
+1. Updated README.
+2. Read keys from JSON file.
+3. Fixed list templates.
+4. Put code involving tastedive api in try-execute block
+because tastedive api is not functional.
+5. Added docstrings to movie functions.
+6. Updated component map, database, and site map in design
+doc.
+==============================================================
+
+jabirC -- 2018-12-07 04:50
+--------------------------------------------------------------
+1. Added book recommendation to home page.
+2. Fixed several bugs with try statements.
+3. Added docstrings to app.py and some util functions.
+4. Fixed signup page alignment error.
+5. Recreated database
+6. Removed print statements, set app.debug to false
+==============================================================

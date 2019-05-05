@@ -1,0 +1,44 @@
+{% extends "index.html" %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="col-md-2">
+    <nav class="navbar navbar-inverse navbar-fixed-left">
+      <ul class="nav navbar-nav" style="height:100%;">
+        <li><a href="/profile">Books read</a></li><br>
+        <li><a href="/movieWatched">Movies Watched</a></li><br>
+        <li><a href="/bookwish">Want to read</a></li><br>
+        <li><a href="/moviewish">Want to watch</a></li><br>
+      </ul>
+    </nav>
+  </div>
+  <div class="col-md-10">
+    {% if data|length > 0 %}
+    <h2 class="text-center"> {{title}}</h2>
+    {% for book in data %}
+    <div class="col-md-2" style="text-align:center;height:220px;">
+      <a href="/book_info/{{book["id"]}}">	
+        {% if "imageLinks" in book["volumeInfo"] %}
+        <img src={{ book["volumeInfo"]["imageLinks"]["thumbnail"] }}width="120px" height="160px" />
+        {% else %}
+        <img src="../static/genericcover.jpg" width="100%" height="100%" width="120px" height="160px"/>
+        {% endif %}
+      </a>
+      <div class="row">
+        <a href="/book_info/{{book["id"]}}">
+	  {{book["volumeInfo"]["title"]}}
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <h3> {{no_results}} </h3>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}
